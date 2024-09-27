@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodCO2gether - Mijn historie</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/historie.css">
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            GoodCO2gether
+        </div>
+        <nav id="navigatie">
+            <button value="" class="nav-item">Home</button>
+            <button value="werkdag" class="nav-item">Nieuwe werkdag</button>
+            <button value="historie" class="nav-item">Mijn historie</button>
+            <button value="footprint" class="nav-item">Mijn footprint</button>
+            <button value="gegevens" class="nav-item">Mijn gegevens</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Mijn historie</h1>
+        <form id="historie_form">
+            <label for="begindatum">Begindatum:</label>
+            <input type="date" id="begindatum" name="begindatum" value="2024-07-01"><br><br>
+
+            <label for="einddatum">Einddatum:</label>
+            <input type="date" id="einddatum" name="einddatum" value="2024-07-04"><br><br>
+
+            <button id="historie_btn">Toon historie</button>
+            <span id="feedback_button"></span>
+        </form>
+
+        <div id="historie_from_db"></div>
+    </main>
+
+    <footer>
+        <article class="colofon">
+            <span class="footer-item">© 2024 Goodzo B.V.</span>
+            <span class="footer-item">Vacatures bij Goodzo B.V.</span>
+            <span class="footer-item">Disclaimer</span>
+        </article>
+    </footer>
+    <script src="../static/js/navigatie.js"></script>
+    <script src="../static/js/historie.js"></script>
+</body>
+</html>

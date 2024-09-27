@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodCO2gether - Mijn gegevens</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/gegevens.css">
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            GoodCO2gether
+        </div>
+        <nav id="navigatie">
+            <button value="" class="nav-item">Home</button>
+            <button value="werkdag" class="nav-item">Nieuwe werkdag</button>
+            <button value="historie" class="nav-item">Mijn historie</button>
+            <button value="footprint" class="nav-item">Mijn footprint</button>
+            <button value="gegevens" class="nav-item">Mijn gegevens</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Mijn gegevens</h1>
+        <h2>Persoonlijke gegevens</h2>
+        <div class="gegevensregel">
+            <strong>Personeelsnummer: </strong>{{ medewerker.personeelsnummer }}
+        </div>
+        
+        <div class="gegevensregel" id="voornaam_field">
+            <strong>Voornaam: </strong><span id="voornaam">{{ medewerker.voornaam }}</span>
+        </div>
+        <div class="gegevensregel" id="tussenvoegsel_field">
+            <strong>Tussenvoegsel: </strong><span id="tussenvoegsel">{{ medewerker.tussenvoegsel }}</span>
+        </div>
+        <div class="gegevensregel" id="achternaam_field">
+            <strong>Achternaam: </strong><span id="achternaam">{{ medewerker.achternaam }}</span>
+        </div>
+        <div class="gegevensregel" id="plaats_field">
+            <strong>Woonplaats: </strong><span id="plaats">{{ thuislocatie.plaats }}</span>
+        </div>
+        <div class="gegevensregel" id="adres_field">
+            <strong>Adres: </strong><span id="adres">{{ thuislocatie.straat }} {{ thuislocatie.huisnummer }}</span>
+        </div>
+
+        <h2>Leaseauto</h2>
+        {% if leaseauto %}
+            
+            <div class="gegevensregel">
+                <strong>Kenteken: </strong>{{ leaseauto.kenteken }}<br>
+            </div>
+            <div class="gegevensregel">
+                <strong>Merk: </strong>{{ leaseauto.merk }}<br>
+            </div>
+            <div class="gegevensregel">
+                <strong>Type: </strong>{{ leaseauto.type }}<br>
+            </div>
+            <div class="gegevensregel">
+                <strong>Model: </strong>{{ leaseauto.model }}<br>
+            </div>
+            <div class="gegevensregel">
+                <strong>Verbruik per km: </strong>{{ leaseauto.verbruikperkilometer }} liter<br>
+            </div>
+        {% else %}
+            <p>Geen leaseauto gevonden.</p>
+        {% endif %}
+
+        <h2>Klantlocaties</h2>
+        {% if actieveklantlocaties %}
+            <ul>
+                {% for locatie in actieveklantlocaties %}
+                <li>
+                    <h3>{{ locatie.locatienaam }}</h3>
+                    <div class="gegevensregel">
+                        <strong>Adres: </strong>{{ locatie.straat }} {{ locatie.huisnummer }}<br>
+                        <strong>Plaats: </strong>{{ locatie.plaats }}<br>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Geen klantlocaties gevonden.</p>
+        {% endif %}
+
+        <h2>Todo - nice to haves</h2>
+        <ol>
+            <li>Thuisadres kunnen wijzigen</li>
+
+            <li>Leaseauto kunnen toevoegen</li>
+            <li>Leaseauto kunnen verwijderen</li>
+            <li>Leaseauto kunnen bewerken</li>
+            <li>Huidige leaseauto kunnen kiezen uit lijst met leaseauto's</li>
+            
+            <li>Klantlocatie kunnen toevoegen</li>
+            <li>Klantlocatie kunnen verwijderen</li>
+            <li>Klantlocatie kunnen bewerken</li>
+        </ol>
+    
+    </main>
+
+    <footer>
+        <article class="colofon">
+            <span class="footer-item">© 2024 Goodzo B.V.</span>
+            <span class="footer-item">Vacatures bij Goodzo B.V.</span>
+            <span class="footer-item">Disclaimer</span>
+        </article>
+    </footer>
+
+    <script src="../static/js/navigatie.js"></script>
+    <script src="../static/js/gegevens.js"></script>
+</body>
+</html>

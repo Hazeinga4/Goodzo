@@ -1,0 +1,14 @@
+# Negeer
+.env
+__pycache__/
+pentests/
+
+# Negeer de map sql ...
+sql/*
+
+# ... behalve deze bestanden
+!sql/create_db.sql
+!sql/dummydata.sql
+!sql/goodco2gether.mwb
+!sql/goodco2gether.mwb.bak
+

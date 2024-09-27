@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodCO2gether - Werkdag</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/werkdag.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-title">
+            GoodCO2gether
+        </div>
+        <nav id="navigatie">
+            <button value="" class="nav-item">Home</button>
+            <button value="werkdag" class="nav-item">Nieuwe werkdag</button>
+            <button value="historie" class="nav-item">Mijn historie</button>
+            <button value="footprint" class="nav-item">Mijn footprint</button>
+            <button value="gegevens" class="nav-item">Mijn gegevens</button>
+        </nav>
+    </header>
+
+    <main>
+
+
+
+        <h1>Nieuwe werkdag</h1>
+        <form id="nieuw_form">
+            <div class="form-field">
+                <label for="datum">Datum:</label>
+                <input type="date" id="datum" name="datum" value="2024-07-04">
+                <button id="vandaag_btn">Vandaag</button>
+            </div>
+
+            <div class="form-field">
+                <label for="basislocatie">Basis werklocatie:</label>
+                <select name="basislocatie" id="basislocatie">
+                    <option value=""> </option>
+                    {% for locatie in locaties %}
+                    <option value="{{ locatie.locatienaam }}">{{ locatie.locatienaam }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="blikjes">Aantal blikjes op HQ:</label>
+                <input type="number" id="blikjes" name="blikjes" value="5">
+            </div>
+
+            <div class="form-field">
+                <label for="beeldscherm_aantal">Aantal beeldschermen:</label>
+                <input type="number" id="beeldscherm_aantal" name="beeldscherm_aantal" value="3">
+            </div>
+
+            <div class="form-field">
+                <label for="beeldscherm_uren">Aantal uren actieve schermen:</label>
+                <input type="number" id="beeldscherm_uren" name="beeldscherm_uren" value="7.7">
+            </div>
+
+            <div class="form-field">
+                <label for="aantal_chatgpt">Aantal AI verzoeken:</label>
+                <input type="number" id="aantal_chatgpt" name="aantal_chatgpt" value="23">
+            </div>
+
+            <h2>Ritten toevoegen</h2>
+            <div id="ritten_container"></div>
+            <div id="rit_sectie">
+                <button id="add_rit_btn" type="button" class="add-rit-btn">➕ Voeg rit toe</button>
+                <div id="rit_feedback"></div>
+            </div>
+
+            <button id="submit_werkdag_btn" type="submit" class="submit-button">Voer werkdag in</button>
+        </form>
+
+        <!-- Hidden element to store locations as JSON -->
+        <div id="locaties_data" data-locaties='[
+    {% for locatie in locaties %}
+        {
+            "locatienaam": "{{ locatie.locatienaam }}",
+            "idlocatie": "{{ locatie.idlocatie }}",
+            "situatie": "{{ locatie.situatie }}",
+            "plaats": "{{ locatie.plaats }}",
+            "straat": "{{ locatie.straat }}",
+            "huisnummer": "{{ locatie.huisnummer }}",
+            "latitude": "{{ locatie.latitude }}",
+            "longitude": "{{ locatie.longitude }}",
+            "isactieveklantlocatie": "{{ locatie.isactieveklantlocatie }}",
+            "mederwerker_idmedewerker": "{{ locatie.idlomederwerker_idmedewerkercatie }}"
+        }{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ]'></div>
+    </main>
+
+    <footer>
+        <article class="colofon">
+            <span class="footer-item">© 2024 Goodzo B.V.</span>
+            <span class="footer-item">Vacatures bij Goodzo B.V.</span>
+            <span class="footer-item">Disclaimer</span>
+        </article>
+    </footer>
+
+    <script src="../static/js/navigatie.js"></script>
+    <script src="../static/js/werkdag_pdokapi.js"></script>
+    <script src="../static/js/werkdag_pdokservices.js"></script>
+    <script src="../static/js/werkdag_nieuw.js"></script>
+    <script src="../static/js/werkdag.js"></script>
+    <script src="../static/js/werkdag_validation.js"></script>
+</body>
+
+</html>

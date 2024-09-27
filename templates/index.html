@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoodCO2gether</title>
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/index.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-title">
+            GoodCO2gether
+        </div>
+        <nav id="navigatie">
+            <button value="" class="nav-item">Home</button>
+            <button value="werkdag" class="nav-item">Nieuwe werkdag</button>
+            <button value="historie" class="nav-item">Mijn historie</button>
+            <button value="footprint" class="nav-item">Mijn footprint</button>
+            <button value="gegevens" class="nav-item">Mijn gegevens</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welkom, {{ medewerker.voornaam }}</h1>
+        <article class="welkomsttekst">
+            <p>Ben je benieuwd naar jouw ecologische voetafdruk? Wil je bijdragen aan een duurzamere wereld? GoodCO2gether helpt je daarbij!</p>
+            <p>Hier kun je eenvoudig je ritten met de leaseauto invoeren, je AI-verzoeken bijhouden en ontdekken wat
+                jouw impact is op het milieu. Door een paar simpele gegevens in te vullen, krijg je inzicht in je eigen
+                CO2-uitstoot en wat je kunt doen om die te verminderen.</p>
+            <p>Het is niet alleen goed voor de planeet, maar ook voor jezelf. Stap voor stap, rit voor rit, kunnen we
+                samen een groot verschil maken. Doe mee, ontdek je impact, en zet de eerste stap naar een duurzamer
+                leven!</p>
+            <p>Laten we samen werken aan een betere toekomst. Start vandaag nog en maak jouw duurzame reis eenvoudig en
+                inzichtelijk!</p>
+
+        </article>
+
+
+        <article class="welkomstknoppen" id="welkomstknoppen">
+            <div class="welkomstknop" id="welkom_werkdag">
+                <div class="welkomstknop_icon">🏢</div>
+                <div class="welkomstknop_label">Nieuwe werkdag</div>
+            </div>
+            <div class="welkomstknop" id="welkom_historie">
+                <div class="welkomstknop_icon">📖</div>
+                <div class="welkomstknop_label">Mijn historie</div>
+            </div>
+            <div class="welkomstknop" id="welkom_footprint">
+                <div class="welkomstknop_icon">📊</div>
+                <div class="welkomstknop_label">Mijn footprint</div>
+            </div>
+        </article>
+
+        <!-- dit moeten we uiteindelijk weghalen -->
+        <h2>Known errors</h2>
+        <ol>
+            <li>Je kunt onder water de HTML aanpassen om een ongevalideerd adres in te voeren</li>
+        </ol>
+
+        <h2>Opdrachten voor cursisten</h2>
+        <ol>
+            <li>Validation feedback afmaken in JS. Loop alle scenario's af: bv startdatum na einddatum</li>
+            <li>Maak de pagina Footprint af inclusief footer en header</li>
+            <li>Totaal aantal kilo CO2 per periode in grote tegel</li>
+            <li>Toaster message (verdwijnen na 3 sec, met laadbalk?) voor het verwijderen of toevoegen van een werkdag</li>
+            <li>Style de site in Goodzo huisstijl (vraag stijlgids op!), inclusief logo en favicon</li>
+            <li>Maak de site geschikt voor mobiel, met minimaal de invoermogelijkheid voor nieuwe werkdag</li>
+        </ol>
+
+        <h2>Bonusopdrachten</h2>
+        <ol>
+            <li>Als je tijd over hebt, fix de wensenlijst in Mijn Gegevens</li>
+            <li>AI chatbot op een apart scherm voor de helpdesk</li>
+            <li>Plot de latlon per locatie op een kaartje bij locaties en evt ritten</li>
+            <li>Laat een Maps-service de ritlengte in kms berekenen bij nieuwe invoer</li>
+        </ol>
+        <!-- tot hier -->
+
+    </main>
+
+    <footer>
+        <article class="colofon">
+            <span class="footer-item">© 2024 Goodzo B.V.</span>
+            <span class="footer-item">Vacatures bij Goodzo B.V.</span>
+            <span class="footer-item">Disclaimer</span>
+        </article>
+    </footer>
+    <script src="../static/js/navigatie.js"></script>
+    <script src="../static/js/index.js"></script>
+</body>
+
+</html>

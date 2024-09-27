@@ -1,0 +1,6 @@
+.error-div {
+    border: 1px solid red;
+    width: 600px;
+    padding: 20px 50px 20px 50px;
+    background-color: rgb(255, 245, 245);
+}

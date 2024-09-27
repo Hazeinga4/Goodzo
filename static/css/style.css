@@ -1,0 +1,17 @@
+.hidden {
+    display: none;
+}
+
+.header-title {
+    font-size: 30pt;
+    color: rgb(85, 102, 102);
+    background-color: rgb(212, 233, 240);
+}
+
+
+.colofon {
+    background-color: #d6dbdf;
+}
+.footer-item {
+    margin: 20px;
+}

@@ -1,0 +1,23 @@
+.welkomstknoppen {
+    display: flex;
+    flex-direction: row;
+}
+
+.welkomstknop {
+    border: 1px solid rgb(216, 216, 216);
+    margin: 10px;
+    padding: 20px;
+    min-width: 150px;
+}
+
+.welkomstknop:hover {
+    background-color: azure;
+    cursor: pointer;
+}
+
+.welkomstknop_icon, .welkomstknop_label {
+    margin: auto;
+    text-align: center;
+    margin: 10px;
+    font-size: 14pt;
+}

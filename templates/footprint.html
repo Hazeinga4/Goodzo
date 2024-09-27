@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodCO2gether - Mijn footprint</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/footprint.css">
+</head>
+<body>
+    <nav id="navigatie">
+        <button value="" class="nav-item">Home</button>
+        <button value="werkdag" class="nav-item">Nieuwe werkdag</button>
+        <button value="historie" class="nav-item">Mijn historie</button>
+        <button value="footprint" class="nav-item">Mijn footprint</button>
+        <button value="gegevens" class="nav-item">Mijn gegevens</button>
+    </nav>
+
+    <h1>Mijn footprint</h1>
+    <h2>Todo</h2>
+    <form id="dashboard_form">
+        <label for="begindatum">Begindatum:</label>
+        <input type="date" id="begindatum" name="begindatum" value="2024-07-01"><br><br>
+
+        <label for="einddatum">Einddatum:</label>
+        <input type="date" id="einddatum" name="einddatum" value="2024-07-04"><br><br>
+
+        <button id="dashboard_btn">Toon footprint</button>
+        <span id="feedback_button"></span>
+    </form>
+    <div id="plot">
+    </div>
+    <ol>
+        <li>Range toevoegen</li>
+        <li>Data ophalen uit DB</li>
+        <li>Berekenen in Python</li>
+        <li>Data plotten</li>
+    </ol>
+
+    <script src='https://cdn.plot.ly/plotly-2.34.0.min.js'></script>
+    <script src="../static/js/navigatie.js"></script>
+    <script src="../static/js/footprint.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+.rit-row {
+    border: 1px solid rgb(216, 216, 216);
+    margin: 10px;
+    padding: 5px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    position: relative;
+}
+
+.rit-row .remove-rit-btn {
+    width: 22px;
+    height: 22px;
+    background-color: unset;
+    position: absolute;
+    padding: 0px;
+    right: 10px;
+    top: 8px;
+    border: unset;
+}
+
+.rit-row .remove-rit-btn:hover {
+    cursor: pointer;
+}
+
+.rit-row select, .rit-row input {
+    box-sizing: border-box;
+}
+
+.rit-field {
+    margin-top: 5px;
+}
+
+.rit-field label {
+    display: inline-block;
+    width: 150px;
+}
+
+.rit-row .adres-invoer, .rit-row .result-latlon {
+    padding-left: 150px;
+    display: inline;
+}
+
+.rit-row .adres-invoer .adres-straat {
+    width: 200px;
+}
+
+.rit-row .adres-invoer .adres-huisnummer {
+    width: 100px;
+}
+
+.rit-row .adres-invoer .adres-plaats {
+    width: 150px;
+}
+
+.adres-huisnummer {
+    width: 50px;
+}
+
+.result-latlon {
+    font-size: 10pt;
+    font-style: oblique;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 742px;
+}
+
+.form-field {
+    padding: 10px 0px;
+    display: flex;
+}
+
+.form-field label {
+    width: 250px;
+}
+
+.submit-button {
+    width: 200px;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: larger;
+}
+
+.submit-button:hover {
+    background-color: azure;
+    cursor: pointer;
+}
+
+.add-rit-btn {
+    background-color: unset;
+    border: none;
+    cursor: copy;
+}
+
+.add-rit-btn:hover {
+    text-decoration: underline;
+}

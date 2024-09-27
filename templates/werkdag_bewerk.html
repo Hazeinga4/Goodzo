@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodCO2gether - Bewerk Werkdag</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/werkdag.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-title">
+            GoodCO2gether
+        </div>
+        <nav id="navigatie">
+            <button value="" class="nav-item">Home</button>
+            <button value="werkdag" class="nav-item">Nieuwe werkdag</button>
+            <button value="historie" class="nav-item">Mijn historie</button>
+            <button value="footprint" class="nav-item">Mijn footprint</button>
+            <button value="gegevens" class="nav-item">Mijn gegevens</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bewerk Werkdag</h1>
+        <form id="bewerk_form">
+            <div class="form-field">
+                <input hidden type="password" id="werkdag_id" name="werkdag_id" value="{{ werkdag.idwerkdag }}">
+            </div>
+
+            <div class="form-field">
+                <label for="datum">Datum:</label>
+                <input type="date" disabled id="datum" name="datum" value="{{ werkdag.datum }}">
+            </div>
+
+            <div class="form-field">
+                <label for="basislocatie">Basis werklocatie:</label>
+                <select name="basislocatie" id="basislocatie">
+                    <option value=""> </option>
+                    {% for locatie in locaties %}
+                    <option value="{{ locatie.locatienaam }}" {% if werkdag.basislocatie_idlocatie==locatie.idlocatie
+                        %}selected{% endif %}>{{ locatie.locatienaam }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="blikjes">Aantal blikjes op HQ:</label>
+                <input type="number" id="blikjes" name="blikjes" value="{{ werkdag.aantalblikjesdrinkenophq }}">
+            </div>
+
+            <div class="form-field">
+                <label for="beeldscherm_aantal">Aantal beeldschermen:</label>
+                <input type="number" id="beeldscherm_aantal" name="beeldscherm_aantal"
+                    value="{{ werkdag.aantalbeeldschermen }}">
+            </div>
+
+            <div class="form-field">
+                <label for="beeldscherm_uren">Aantal uren actieve schermen:</label>
+                <input type="number" id="beeldscherm_uren" name="beeldscherm_uren"
+                    value="{{ werkdag.aantalurenbeeldschermanaan }}">
+            </div>
+
+            <div class="form-field">
+                <label for="aantal_chatgpt">Aantal AI verzoeken:</label>
+                <input type="number" id="aantal_chatgpt" name="aantal_chatgpt"
+                    value="{{ werkdag.aantalverzoekenaanchatgpt }}">
+            </div>
+
+            <h2>Ritten toevoegen</h2>
+            <div id="ritten_container">
+                {% for rit in ritten %}
+                <div class="rit-row">
+                    <button class="remove-rit-btn">❌</button>
+                    <div class="rit-field">
+                        <div class="rit-label-plus-input">
+                            <label>Van:</label>
+                            <select class="rit-van">
+                                {% for locatie in locaties %}
+                                <option value="{{ locatie.locatienaam }}" {% if rit.van==locatie.idlocatie %}selected{%
+                                    endif %}>{{ locatie.locatienaam }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        {% for locatie in locaties %}
+                        {% if rit.van == locatie.idlocatie and locatie.locatienaam == 'Anders' %}
+                        <div class="adres-invoer">
+                            <input type="hidden" value="{{ rit.vanadres }}" class="adres-hidden">
+                            <input type="text" placeholder="Straat" class="adres-straat" value="{{ rit.vanadres }}">
+                            <input type="text" placeholder="Huisnr" class="adres-huisnummer" value="{{ rit.vanadres }}">
+                            <input type="text" placeholder="Plaats" class="adres-plaats" value="{{ rit.vanadres }}">
+                            <input type="hidden" value="{{ rit.vanlatitude }}" class="adres-latitude hidden">
+                            <input type="hidden" value="{{ rit.vanlongitude }}" class="adres-longitude hidden">
+                        </div>
+                        <div class="result-latlon">latitude: {{ rit.vanlatitude }}, longitude: {{ rit.vanlongitude }}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="rit-field">
+                        <div class="rit-label-plus-input">
+                            <label>Naar:</label>
+                            <select class="rit-naar">
+                                {% for locatie in locaties %}
+                                <option value="{{ locatie.locatienaam }}" {% if rit.naar==locatie.idlocatie %}selected{%
+                                    endif %}>{{ locatie.locatienaam }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        {% for locatie in locaties %}
+                        {% if rit.naar == locatie.idlocatie and locatie.locatienaam == 'Anders' %}
+                        <div class="adres-invoer">
+                            <input type="hidden" value="{{ rit.naaradres }}" class="adres-hidden">
+                            <input type="text" placeholder="Straat" class="adres-straat" value="{{ rit.naaradres }}">
+                            <input type="text" placeholder="Huisnr" class="adres-huisnummer"
+                                value="{{ rit.naaradres }}">
+                            <input type="text" placeholder="Plaats" class="adres-plaats" value="{{ rit.naaradres }}">
+                            <input type="hidden" value="{{ rit.naarlatitude }}" class="adres-latitude hidden">
+                            <input type="hidden" value="{{ rit.naarlongitude }}" class="adres-longitude hidden">
+                        </div>
+                        <div class="result-latlon">latitude: {{ rit.naarlatitude }}, longitude: {{ rit.naarlongitude }}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="rit-field">
+                        <div class="rit-label-plus-input">
+                            <label>Aantal Kms:</label>
+                            <input type="number" step="0.1" placeholder="Aantal kms" class="rit-kilometers"
+                                value="{{ rit.aantalkilometers}}">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="rit_sectie">
+                <button id="add_rit_btn" type="button" class="add-rit-btn">➕ Voeg rit toe</button>
+                <div id="rit_feedback"></div>
+            </div>
+
+            <button id="submit_werkdag_btn" type="submit" class="submit-button">Sla werkdag op</button>
+        </form>
+
+        <!-- Hidden elements to store locations as JSON -->
+        <div id="locaties_data" data-locaties='[
+    {% for locatie in locaties %}
+        {
+            "locatienaam": "{{ locatie.locatienaam }}",
+            "idlocatie": "{{ locatie.idlocatie }}",
+            "situatie": "{{ locatie.situatie }}",
+            "plaats": "{{ locatie.plaats }}",
+            "straat": "{{ locatie.straat }}",
+            "huisnummer": "{{ locatie.huisnummer }}",
+            "latitude": "{{ locatie.latitude }}",
+            "longitude": "{{ locatie.longitude }}",
+            "isactieveklantlocatie": "{{ locatie.isactieveklantlocatie }}",
+            "mederwerker_idmedewerker": "{{ locatie.idlomederwerker_idmedewerkercatie }}"
+        }{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ]'></div>
+    
+    </main>
+    <footer>
+        <article class="colofon">
+            <span class="footer-item">© 2024 Goodzo B.V.</span>
+            <span class="footer-item">Vacatures bij Goodzo B.V.</span>
+            <span class="footer-item">Disclaimer</span>
+        </article>
+    </footer>
+
+    <script src="../static/js/werkdag_pdokapi.js"></script>
+    <script src="../static/js/werkdag_pdokservices.js"></script>
+    <script src="../static/js/navigatie.js"></script>
+    <script src="../static/js/werkdag.js"></script>
+    <script src="../static/js/werkdag_validation.js"></script>
+    <script src="../static/js/werkdag_bewerken.js"></script>
+
+</body>
+
+</html>
