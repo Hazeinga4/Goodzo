@@ -2,10 +2,17 @@
     display: none;
 }
 
+html {
+    font-family: sans-serif;
+}
+
 .header-title {
     font-size: 30pt;
-    color: rgb(85, 102, 102);
-    background-color: rgb(212, 233, 240);
+    color: white;
+    background-color: #34143e;
+    padding: 2vh;
+    margin-bottom: 1vh;
+
 }
 
 
@@ -15,3 +22,17 @@
 .footer-item {
     margin: 20px;
 }
+
+button {
+    background-color: #f8ec81;
+    border: #f8ec81;
+    color: #200b25;
+    font-weight: 700;
+    border-radius: 20%;
+    padding-bottom: 0.5vh;
+    padding-top: 0.5vh;
+    padding-right: 1vh;
+    padding-left: 1vh;
+
+}
+

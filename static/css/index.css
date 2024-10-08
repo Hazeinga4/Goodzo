@@ -1,13 +1,19 @@
 .welkomstknoppen {
     display: flex;
     flex-direction: row;
+    
 }
 
 .welkomstknop {
-    border: 1px solid rgb(216, 216, 216);
+    border: 7px solid #f8ec81;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     min-width: 150px;
+    border-radius: 25%;
+    border-style: solid;
+    background-color: #f8ec81;
+    color: #34143e;
+    font-weight: 700;
 }
 
 .welkomstknop:hover {
@@ -18,6 +24,24 @@
 .welkomstknop_icon, .welkomstknop_label {
     margin: auto;
     text-align: center;
-    margin: 10px;
-    font-size: 14pt;
+    margin: 5px;
+    font-size: 10pt;
+    
+}
+
+body {
+    background-color: #ead6f0;
+}
+
+.NieuweWerkdagDikkelijn {
+    color: white;
+    background-color: #b288bf;
+    padding: 0.1vh;
+    margin-bottom: 0.1vh;
+    
+
+}
+
+.Kleurtje {
+    background-color: white;
 }
