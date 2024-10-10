@@ -36,3 +36,15 @@ button {
 
 }
 
+navigatie {
+    position: fixed;
+    align-self: center;
+}
+
+nav{
+    padding-left: 200px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #34143e;
+    color: azure;
+}
