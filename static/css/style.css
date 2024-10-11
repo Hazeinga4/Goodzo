@@ -6,6 +6,10 @@ html {
     font-family: sans-serif;
 }
 
+body {
+    margin:0px;
+}
+
 .header-title {
     font-size: 30pt;
     color: white;
@@ -36,15 +40,66 @@ button {
 
 }
 
-navigatie {
+button:hover { 
+    background-color: aqua;
+    box-shadow: 5px #B288BF;
+}
+
+.navigatie {
     position: fixed;
     align-self: center;
 }
 
 nav{
-    padding-left: 200px;
+    padding-left: 20px;
     padding-bottom: 20px;
     padding-top: 20px;
+    padding-right: 20px;
     background-color: #34143e;
     color: azure;
+    border-radius: 10%;
+    background: transparent 70%;
+}
+
+header {
+    background: radial-gradient(circle at 50% 50%,
+        #200B25 20%,
+        #34143E 40%,
+        #B288BF 60%,
+        #C9AAD3 80%
+    );
+    background-size: 200% 200%;
+    animation: smoothWaveAnimation 20s ease-in-out infinite;
+    padding: 20px 40px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes smoothWaveAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 30%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 70%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Goodzotogether {
+    color:white;
+    font-size: 25px ;
 }
