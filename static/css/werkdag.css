@@ -8,6 +8,10 @@
     position: relative;
 }
 
+html {
+    height: 100%;
+}
+
 .rit-row .remove-rit-btn {
     width: 22px;
     height: 22px;
@@ -18,6 +22,13 @@
     top: 8px;
     border: unset;
 }
+
+main {
+background-color: #200b25;
+color: white;
+height: 100%;
+}
+
 
 .rit-row .remove-rit-btn:hover {
     cursor: pointer;
@@ -63,18 +74,16 @@
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 742px;
+    
 }
 
 .form-field {
     padding: 10px 0px;
-    display: flex;
 }
 
 .form-field label {
     width: 250px;
+    text-align: center;
 }
 
 .submit-button {

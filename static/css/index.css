@@ -10,7 +10,7 @@
     padding: 10px;
     min-width: 150px;
     border-radius: 25%;
-    border-style: solid;
+    
     background-color: #f8ec81;
     color: #34143e;
     font-weight: 700;
@@ -36,8 +36,12 @@ body {
 .NieuweWerkdagDikkelijn {
     color: white;
     background-color: #b288bf;
-    padding: 0.1vh;
-    margin-bottom: 0.1vh;
+    padding: 2vh;
+    width: 100%;
+    justify-content: space-around;
+
+   
+    
     
 
 }
