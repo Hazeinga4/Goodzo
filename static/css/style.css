@@ -31,6 +31,16 @@ main {
     
 }
 
+.p1 {
+    width: 500px;
+    display: flex;
+    padding: 10px;
+    background: #f8ec81;
+    margin:50px;
+    margin-left:120px;
+    border-radius: 10px;
+    
+}
 
 
 .colofon {
@@ -84,9 +94,8 @@ header {
     background-size: 200% 200%;
     animation: smoothWaveAnimation 10s ease-in-out infinite;
     padding: 20px 40px;
-    text-align: center;
-    
-    
+    text-align: left;
+    align-items: left;
 
     overflow: hidden;
     
