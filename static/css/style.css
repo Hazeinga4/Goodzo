@@ -28,6 +28,7 @@ main {
     margin: auto;
     flex-direction: column;
     text-align: center;
+    min-height: calc(100vh - 80px - 50px);
     
 }
 
