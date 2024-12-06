@@ -31,7 +31,14 @@
 
 body {
     
-    background-image:linear-gradient(#b288bf,     #C9AAD3 );
+    background: radial-gradient(circle at 80% 100%,
+    #34143e 20%,
+    #b288bf 40%,
+    #C9AAD3 60%,
+    #d6dbdf 80%
+    );
+    background-size: 200%;
+    
 }
 
 .NieuweWerkdagDikkelijn {
@@ -39,8 +46,4 @@ body {
     padding: 2vh;
     width: 100%;
     justify-content: space-around;
-}
-
-.Kleurtje {
-    background-color: white;
 }
