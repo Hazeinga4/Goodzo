@@ -28,27 +28,30 @@ main {
     margin: auto;
     flex-direction: column;
     text-align: center;
-    min-height: calc(100vh - 80px - 50px);
     
 }
 
 .p1 {
     width: 500px;
     display: flex;
-    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    padding-bottom: 10px;
     background: #f8ec81;
-    margin:50px;
-    margin-left:120px;
+    margin:auto;
+    margin-bottom: 40px;
     border-radius: 10px;
-    
 }
 
 
 .colofon {
     background-color: #d6dbdf;
+    display: flex;
 }
 .footer-item {
     margin: 20px;
+    display: flex;
 }
 
 button {
@@ -70,11 +73,12 @@ button:hover {
 }
 
 .navigatie {
-    position: fixed;
-    align-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 nav{
+    
     padding-left: 20px;
     padding-bottom: 20px;
     padding-top: 20px;
@@ -83,17 +87,19 @@ nav{
     color: azure;
     border-radius: 10%;
     background: transparent 70%;
+    margin: auto;
+    width: fit-content;
 }
 
 header {
     background: radial-gradient(circle at 80% 100%,
-    #34143e,
+    #34143e 20%,
     #b288bf 40%,
     #C9AAD3 60%,
-    #ead6f0 80%
+    #d6dbdf 80%
     );
     background-size: 200% 200%;
-    animation: smoothWaveAnimation 10s ease-in-out infinite;
+    
     padding: 20px 40px;
     text-align: left;
     align-items: left;
@@ -106,23 +112,43 @@ header {
     0% {
         background-position: 0% 50%;
     }
-    25% {
-        background-position: 50% 30%;
+
+    15% {
+        background-position: 0% 15%;
     }
+    25% {
+        background-position: 15% 30%;
+    }
+
+    35% {
+        background-position: 30% 45%;
+    }
+
     50% {
-        background-position: 100% 100%;
+        background-position: 45% 60%;
+    }
+
+    65%{
+        background-position: 60% 75%;
+    
     }
     75% {
-        background-position: 50% 70%;
+        background-position: 75% 80%;
     }
+
+
     100% {
-        background-position: 0% 0%;
+        background-position: 80% 20%;
     }
 }
 
 .Goodzotogether {
     color:white;
     font-size: 25px ;
+    box-shadow: #200b25;
+    text-shadow: #200b25;
+    margin: auto;
+    width: fit-content;
     
 }
 

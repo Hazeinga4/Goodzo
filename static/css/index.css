@@ -30,20 +30,15 @@
 }
 
 body {
-    background-color: #ead6f0;
+    
+    background-image:linear-gradient(#b288bf,     #C9AAD3 );
 }
 
 .NieuweWerkdagDikkelijn {
     color: white;
-    background-color: #b288bf;
     padding: 2vh;
     width: 100%;
     justify-content: space-around;
-
-   
-    
-    
-
 }
 
 .Kleurtje {
