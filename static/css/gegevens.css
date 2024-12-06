@@ -1,0 +1,15 @@
+main {
+    background-color: #200b25;
+    color: white;
+    height: 50%;
+    }
+
+footer {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    height: 0px;
+    background: #4793AD;
+    position: relative;
+    padding:0px 0px 0px 0px; 
+    }
